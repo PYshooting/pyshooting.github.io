@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 新 Bootstrap4 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- popper.min.js 用于弹窗、提示、下拉菜单 -->
+<script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+
+<!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Title</title>
+</head>
+<body>
+<div class="container-fluid">
+
+  <div class="row">
+      <div class="col-6">
+          1.找到当前趋势线。
+      </div>
+      <div class="col-6">
+          当前趋势线突破看第2步。
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-6">
+          2.形成了一个力度大的上圈圈。
+      </div>
+      <div class="col-6">
+          K线基本在上圈圈的所有均线上部则看第3步。
+      </div>
+  </div>
+    <div class="row">
+      <div class="col-6">
+          3.回调达到前一个下圈圈低点附近。
+      </div>
+      <div class="col-6">
+          这个下圈圈比上个下圈圈小形成背驰，可以买入。
+      </div>
+  </div>
+    <div class="row">
+      <div class="col-6">
+          次新股在最大级别的第一个下圈圈有支撑，13根K线全部在26均线上方。
+      </div>
+      <div class="col-6">
+          在即将下圈圈右交点形成时，可以买入。
+      </div>
+  </div>
+    <div class="row">
+      <div class="col-6">
+          <input type="number"  placeholder="Enter Value" id="inputValue">
+      </div>
+      <div class="col-6">
+          <button type="button" class="btn btn-primary" id="calBtn">Calculate</button>
+      </div>
+  </div>
+    <div class="row text-danger">
+      <div class="col-6 rate">
+          1.1
+      </div>
+      <div class="col-6 value">
+          55
+      </div>
+  </div>
+    <div class="row text-danger">
+      <div class="col-6 rate">
+          1.0809
+      </div>
+      <div class="col-6 value">
+          55
+      </div>
+  </div>
+    <div class="row text-danger">
+      <div class="col-6 rate">
+          1.0618
+      </div>
+      <div class="col-6 value">
+          55
+      </div>
+  </div>
+    <div class="row text-danger">
+      <div class="col-6 rate">
+          1.05
+      </div>
+      <div class="col-6 value">
+          55
+      </div>
+  </div>
+    <div class="row text-danger">
+      <div class="col-6 rate">
+          1.0382
+      </div>
+      <div class="col-6 value">
+          55
+      </div>
+  </div>
+    <div class="row text-danger">
+      <div class="col-6 rate">
+          1.0191
+      </div>
+      <div class="col-6 value">
+          55
+      </div>
+  </div>
+    <div class="row">
+      <div class="col-6 rate">
+          1
+      </div>
+      <div class="col-6 value">
+          55
+      </div>
+  </div>
+    <div class="row text-success">
+      <div class="col-6 rate">
+          0.9809
+      </div>
+      <div class="col-6 value">
+          55
+      </div>
+  </div>
+    <div class="row text-success">
+      <div class="col-6 rate">
+          0.9618
+      </div>
+      <div class="col-6 value">
+          55
+      </div>
+  </div>
+    <div class="row text-success">
+      <div class="col-6 rate">
+          0.95
+      </div>
+      <div class="col-6 value">
+          55
+      </div>
+  </div>
+    <div class="row text-success">
+      <div class="col-6 rate">
+          0.9382
+      </div>
+      <div class="col-6 value">
+          55
+      </div>
+  </div>
+    <div class="row text-success">
+      <div class="col-6 rate">
+          0.9191
+      </div>
+      <div class="col-6 value">
+          55
+      </div>
+  </div>
+    <div class="row text-success">
+      <div class="col-6 rate">
+          0.9
+      </div>
+      <div class="col-6 value">
+          55
+      </div>
+  </div>
+</div>
+
+</body>
+<script>
+    $('#calBtn').click(function(){
+        var inputValue = $('#inputValue').val();
+        var valueDivs = $(document).find('.value');
+        valueDivs.each(function(index,valueDiv){
+            rateDiv = $(valueDiv).parent('.row').find('.rate');
+            var re = /([0-9]+\.[0-9]{2})[0-9]*/;
+            rate = Number($(rateDiv).text());
+            $(valueDiv).text(String(inputValue*rate).replace(re,"$1"));
+        });
+
+    });
+</script>
+</html>
