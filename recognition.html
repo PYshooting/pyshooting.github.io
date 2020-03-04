@@ -3,17 +3,28 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
+<style>
+.divcss5{ width:600px;word-wrap:break-word}
+</style>
 </head>
 <body>
 <div>
 <!--<audio controls autoplay></audio>-->
+
+<select id="lans" onchange="changeLanguage()">
+  <option value ="en-US">English</option>
+  <option value ="fr-FR">French</option>
+  <option value="de-DE">Germany</option>
+  <option value="zh-CN">Chinese</option>
+</select>
 <input onclick="startRecording()" type="button" value="Speak" />
-<input onclick="stopRecording()" type="button" value="End" />
+<input onclick="stopRecording()" type="button" value="Stop" />
+<!--<input onclick="clearText()" type="button" value="Clear" />-->
 <!--<input onclick="playRecording()" type="button" value="播放" />-->
 </div>
 You said:
-<div id="content" style="font-size:200%;color:green;">
-
+<div id="said"  style="font-size:150%;color:blue;"></div>
+<div id="content" contenteditable="true" spellcheck class="divcss5" style="font-size:200%;color:green;">
 </div>
 <script type="text/javascript" src="recognition.js"></script>
 
